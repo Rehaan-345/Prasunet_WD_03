@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasunet_WD_03</title>
+    <style>
+        * {
+            transition-duration: 0.25s;
+            font-family: "Roboto", "Arial", sans-serif;
+            overflow: hidden;
+        }
+
+        :root {
+            --wid: 600px
+        }
+
+        html,
+        body {
+
+            background-color: rgb(0, 80, 146);
+        }
+
+        .nav {
+            position: sticky;
+            width: var(--wid);
+            margin: auto;
+            top: 30px;
+            background-color: rgb(9, 106, 157);
+            color: rgb(102, 169, 205);
+            display: flex;
+            justify-content: space-between;
+            border-radius: 25px;
+        }
+
+        .nav h1 {
+            margin: 1rem;
+            padding-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .nav button {
+            margin: 1rem 2rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: rgb(102, 169, 205);
+            border-color: rgb(47, 135, 183);
+        }
+
+        .nav button:hover {
+            /* background-color: aqua; */
+            cursor: pointer;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            margin: 1rem 1rem;
+        }
+
+        .content {
+            text-align: center;
+            justify-content: space-between;
+            background-color: rgb(78, 125, 169);
+            margin: auto;
+            margin-top: 6rem;
+            width: calc(var(--wid)*0.9);
+            border-radius: 25px;
+            height: auto;
+            padding: 2rem;
+        }
+
+        .heading {
+            height: 3em;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        .heading h1 {
+            margin: 5px
+        }
+
+        .ani {
+            margin-top: -3rem !important;
+        }
+
+        .playground {
+            user-select: none;
+            display: grid;
+            margin: auto;
+            border-radius: 0.5rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            background-color: rgb(121, 134, 144);
+            height: 25rem;
+            width: 25rem;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: repeat(3, auto);
+        }
+
+        .box {
+            background-color: rgb(231, 210, 21);
+            border-radius: 0.5rem;
+            width: 6rem;
+            height: 6rem;
+            font-size: xx-large;
+            align-content: center;
+            cursor: pointer;
+        }
+
+        .o,
+        .x,
+        .t {
+            cursor: not-allowed !important;
+        }
+
+        @media (min-width:1600px) {
+            :root {
+                --wid: 1000px;
+            }
+
+            .nav h1 {
+                padding-top: 1.25rem;
+                font-size: xxx-large;
+            }
+
+            .nav button {
+                margin: 1rem 3rem;
+                padding: 2rem;
+                border-radius: 2rem;
+                border-width: 0.25rem;
+                font-size: x-large;
+            }
+
+            .nav button:hover {
+                padding: 2rem 4rem;
+                border-radius: 3rem;
+                margin: 1rem 1rem;
+            }
+
+            .heading {
+                height: 3em;
+                margin: 1rem;
+                font-size: xx-large;
+                text-align: center;
+            }
+
+            .heading h1 {
+                margin: 10px
+            }
+
+            .ani {
+                margin-top: -5.5rem !important;
+            }
+
+            .playground {
+                border-radius: 1.0rem;
+                margin-bottom: 2rem;
+                height: 40rem;
+                width: 40rem;
+            }
+
+            .box {
+                width: 10rem;
+                height: 10rem;
+            border-radius: 1.5rem;
+            font-size: 5rem;
+
+            }
+            
+        }
+
+        @media(max-width:650px) {
+            :root {
+                --wid: 500px;
+            }
+        }
+
+        @media(max-width:550px) {
+            :root {
+                --wid: 375px;
+            }
+
+            .nav h1 {
+                font-size: larger;
+            }
+
+            .nav button {
+                margin: 1rem 1.5rem;
+                padding: 0.75rem;
+            }
+
+            .nav button:hover {
+                margin: 1rem 1rem;
+                padding: 0.75rem 1.25rem;
+            }
+
+            .playground {
+                margin-bottom: 0.5rem;
+                height: 20rem;
+                width: 20rem;
+            }
+
+            .box {
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+
+        @media(max-width:425px) {
+            :root {
+                --wid: 350px;
+            }
+
+            .nav h1 {
+                font-size: large;
+            }
+
+            .playground {
+                height: 18rem;
+                width: 18rem;
+            }
+
+            .box {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+
+        <h1>Modes</h1>
+        <button>2 Player</button>
+        <button onclick="rese()">RESET</button>
+
+    </div>
+
+    <div class="content">
+
+        <div class="heading">
+            <h1 class="displaybruh">(￣___,￣ )</h1>
+            <h1 class="displaybruh"></h1>
+        </div>
+        <div class="playground" id="playground">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+    </div>
+
+    <script>
+
+        var data = document.querySelectorAll('.box');
+
+        const p = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        var player = true;
+
+        var end = false;
+
+        const dis = document.getElementsByClassName('displaybruh');
+
+        start()
+
+        function start() {
+            data = document.querySelectorAll('.box')
+            data.forEach(d => {
+                d.addEventListener(
+                    'click',
+
+                    (e) => {
+                        if (end) {
+                            return
+                        }
+                        b = e.target;
+                        console.log("he clicked me ⊙﹏⊙∥" + b.innerHTML + player)
+                        b.innerHTML = player ? "x" : "o";
+                        b.classList.add(player ? "x" : "o")
+                        w = won(b.innerHTML);
+                        console.log(b.innerHTML, b.classList, w)
+                        if (w) {
+                            end = true
+                            if (player) {
+                                console.log("X Won!!!");
+                                pop('X');
+                            }
+                            else {
+                                console.log("O Won!!!");
+                                pop('O');
+                            }
+                        }
+                        else if (dra()) {
+                            pop('N')
+                        }
+                        else {
+                            player = !player;
+                        };
+                    },
+
+                    { once: true })
+            });
+        }
+
+        function pop(xo) {
+
+            // alert("(👉ﾟヮﾟ)👉 "+xo + " won //");
+
+            if (xo == "N") {
+                dis[1].innerHTML = "(╬▔皿▔)╯ Its a draw";
+            } else {
+                dis[1].innerHTML = "(👉ﾟヮﾟ)👉 " + xo + " won";
+            }
+
+
+            dis[0].classList.add('ani')// = 'ani displaybruh'
+
+            data.forEach(d => {
+                d.classList.add('t')// = 'box t';
+                d.onclick = null;
+            })
+
+            setTimeout(() => {
+                rese()
+            }, 3000);
+
+            return
+
+
+        }
+
+        function won(xo) {
+            return p.some(possiblecombi => {
+                return possiblecombi.every(i => {
+                    return data[i].classList.contains(xo)
+                })
+            })
+        }
+
+        function rese() {
+            console.log("o((>ω< ))o")
+            player = !player;
+            end = false;
+            dis[0].classList = 'displaybruh';
+            document.getElementById('playground').innerHTML = `
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>`
+            start()
+        }
+
+        function dra() {
+            return [...data].every(i => {
+                return i.classList.contains('x') || i.classList.contains('o')
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>
